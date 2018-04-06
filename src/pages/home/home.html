@@ -1,14 +1,60 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-card>
+    <ion-card-header>
+      NavPush 1
+    </ion-card-header>
+    <ion-card-content>
+      <p>Use Both
+        <code>NavPush</code>and
+        <code>NavParams</code>
+      </p>
+      <button button ion-button block [navPush]="otherPage" [navParams]="myString">
+        Other Page 1
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      navPush 2
+    </ion-card-header>
+    <ion-card-content>
+      <p>Use Only
+        <code>navPush</code> and pass array insted</p>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="myJSON.text">
+
+          </ion-input>
+
+        </ion-item>
+      </ion-list>
+      <div>
+        <button ion-button block color="secondary" [navPush]="otherPage" [navParams]="myJSON">
+          other page
+        </button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      NavPush3
+    </ion-card-header>
+    <ion-card-content>
+      <p>Use Click event to triger<code>nav.push</code>
+      in TS </p>
+      <button ion-button block color=""dark (click)="gotoOtherPage()">Other Page 3</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
